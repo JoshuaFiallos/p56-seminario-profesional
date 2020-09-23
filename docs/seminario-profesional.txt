@@ -1,6 +1,8 @@
 UNIVERSIDAD POLITÉCNICA SALESIANA
-SEMINARIO PROFESIONAL NODE.JS + MONGODB
 
-[1] Git & Github 21/09/2020
-[2] Fundamentos Node.js 22/09/2020
-[3] Fundamentos MongoDB 23/09/2020
+Seminario Profesional: Node.js + MongoDB
+
+[1].- Git & Github - 21/09/2020
+[2].- Git & Github - 22/09/2020
+[2].- Fundamentos de Javascript - 23/09/2020
+[3].- Fundamentos de Javascript - 24/09/2020
