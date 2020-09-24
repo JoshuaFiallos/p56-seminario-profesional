@@ -7,3 +7,9 @@ Este seminario profesional permitirá generar la competencia para la implementac
 
 #### Primer sesión (21/09/2020)
 Fundamentos básicos sobre el uso de la herramienta Git & Github
+
+#### Segunda sesión (22/09/2020)
+Inserción de carpetas con Git
+
+#### Tercera sesión (23/09/2020)
+Fundamentos y ejercicios de aplicación con Javascript utilizando Visual Studio Code como editor de texto
