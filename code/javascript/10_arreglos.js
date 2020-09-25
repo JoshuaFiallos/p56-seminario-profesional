@@ -74,11 +74,11 @@ otrasPersonas.map( pasarAlturasMetros )
 console.log( personas )
 console.log( otrasPersonas )
 
-//var personasCm = personas.map( function(objeto) {
-//    objeto.altura = objeto.altura * 100
-//    return objeto
-//} )
-//console.log( personasCm )
+// var personasCm = personas.map( function(objeto) {
+//     objeto.altura = objeto.altura * 100
+//     return objeto
+// } )
+// console.log( personasCm )
 
 // Uso de la función reduce en arreglos
 var sum = 0
@@ -87,8 +87,8 @@ for (persona of personas) {
 }
 console.log( `La cantidad de libros en total es ${totalLibros}` )
 
-//const contabilizarLibros = (acum, { cantidadLibros }) => acum + cantidadLibros
 
-//var totalLibros = personas.reduce( contabilizarLibros, 0 )
+const contabilizarLibros = (acum, { cantidadLibros }) => acum + cantidadLibros
+var totalLibros = personas.reduce( contabilizarLibros, 0 )
 
-//console.log( `La cantidad de libros en total es ${totalLibros}` )
+console.log( `La cantidad de libros en total es ${totalLibros}` )
