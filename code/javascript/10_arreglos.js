@@ -1,3 +1,4 @@
+// Especificación de objetos
 var objeto1 = {
     nombre: 'Luis',
     apellido: 'Armijos',
@@ -37,7 +38,7 @@ var personas = [ objeto1, objeto2, objeto3, objeto4, objeto5 ]
 
 // Recorrer un arreglo de objetos
 for ( persona of personas ) {
-    console.log( `${persona.nombre} ${persona.aapellido}` )
+    console.log( `${persona.nombre} ${persona.apellido}` )
 }
 
 console.log( '\n' )
@@ -52,7 +53,7 @@ var personasAltas = personas.filter( esAlta )
 
 console.log( personasAltas )
 for ( persona of personasAltas ) {
-    console.log( `${persona.nombre} ${persona.aapellido}` )
+    console.log( `${persona.nombre} ${persona.apellido}` )
 }
 
 // Uso de la función map con arreglos
@@ -66,6 +67,7 @@ const pasarAlturasMetros = (objeto) => {
 }
 
 var otrasPersonas = []
+
 for (persona of personas) {
     otrasPersonas.push( { ... persona} )
 }
@@ -74,21 +76,21 @@ otrasPersonas.map( pasarAlturasMetros )
 console.log( personas )
 console.log( otrasPersonas )
 
-//var personasCm = personas.map( function(objeto) {
-//    objeto.altura = objeto.altura * 100
-//    return objeto
-//} )
-//console.log( personasCm )
+// var personasCm = personas.map( function(objeto) {
+//     objeto.altura = objeto.altura * 100
+//     return objeto
+// } )
+// console.log( personasCm )
 
 // Uso de la función reduce en arreglos
 var sum = 0
 for (persona of personas) {
     sum += persona.cantidadLibros
 }
+console.log( `La cantidad de libros en total es ${sum}` )
+
+
+const contabilizarLibros = (acum, { cantidadLibros }) => acum + cantidadLibros
+var totalLibros = personas.reduce( contabilizarLibros, 0 )
+
 console.log( `La cantidad de libros en total es ${totalLibros}` )
-
-//const contabilizarLibros = (acum, { cantidadLibros }) => acum + cantidadLibros
-
-//var totalLibros = personas.reduce( contabilizarLibros, 0 )
-
-//console.log( `La cantidad de libros en total es ${totalLibros}` )
