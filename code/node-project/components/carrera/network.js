@@ -1,17 +1,49 @@
 const express = require('express')
 const response = require('../../network/response')
+const controller = require('./controller')
 
 const router = express.Router()
 
 router.get('/', function(req, res) {
-    response.sucess( req, res, 'Lista de Carreras de la UPS', 200 )
+    controller.getCarreras()
+        .then((data) => {
+            response.sucess( req, res, data, 200 )
+        })
+        .catch((error) => {
+            response.error( req, res, error, 500 )
+        })
 })
+
 router.post('/', function(req, res) {
-    if(req.query.error == 'ok'){
-        response.error( req, res, 'Error al ingresar a la carrera', 500 )
-    } else {
-        response.sucess( req, res, 'Ingreso de carrera exitoso', 201 )
-    }
+    controller.addCarrera( req.body.nombre, req.body.descripcion )
+        .then((data) => {
+            response.sucess( req, res, data, 201 )
+        })
+        .catch((error) => {
+            response.error( req, res, error, 500 )
+        })
+})
+
+// Update
+router.patch('/', function(req, res) {
+    controller.updateCarrera( req.body.nombre, req.body.descripcion )
+        .then((data) => {
+            response.sucess( req, res, data, 201 )
+        })
+        .catch((error) => {
+            response.error( req, res, error, 500 )
+        })
+})
+
+// Delete
+router.delete('/', function(req, res) {
+    controller.deleteCarrera( req.body.nombre )
+        .then((data) => {
+            response.sucess( req, res, data, 201 )
+        })
+        .catch((error) => {
+            response.error( req, res, error, 500 )
+        })
 })
 
 module.exports = router
