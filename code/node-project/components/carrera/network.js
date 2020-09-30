@@ -15,7 +15,7 @@ router.get('/', function(req, res) {
 })
 
 router.post('/', function(req, res) {
-    controller.addCarrera( req.body.nombre, req.body.descripcion )
+    controller.addCarrera( req.body.nombre, req.body.abreviatura, req.body.descripcion )
         .then((data) => {
             response.sucess( req, res, data, 201 )
         })
@@ -26,7 +26,7 @@ router.post('/', function(req, res) {
 
 // Update
 router.patch('/', function(req, res) {
-    controller.updateCarrera( req.body.nombre, req.body.descripcion )
+    controller.updateCarrera( req.body.id_carrera, req.body.nombre, req.body.abreviatura, req.body.descripcion )
         .then((data) => {
             response.sucess( req, res, data, 201 )
         })
@@ -37,7 +37,7 @@ router.patch('/', function(req, res) {
 
 // Delete
 router.delete('/', function(req, res) {
-    controller.deleteCarrera( req.body.nombre )
+    controller.deleteCarrera( req.body.id_carrera )
         .then((data) => {
             response.sucess( req, res, data, 201 )
         })
