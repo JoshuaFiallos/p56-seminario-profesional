@@ -16,5 +16,5 @@ const mySchema = new schema({
     },
 })
 
-const model = mongoose.model( 'Docente', mySchema )
+const model = mongoose.model( 'Estudiante', mySchema )
 module.exports = model
