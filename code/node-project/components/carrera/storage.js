@@ -1,26 +1,16 @@
-const db = require('mongoose')
 const model = require('./model')
-
-const uri = "mongodb+srv://ups:ups2020@cluster0.hr0ju.gcp.mongodb.net/utups?retryWrites=true&w=majority";
-
-db.Promise = global.Promise
-db.connect(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    dbName: 'utups',
-})
-    .then((data) => { console.log('[db] - Conectado con éxito') })
-    .catch((error) => { console.error( '[error log] - ' + error ) })
-
-const list = []
 
 function addCarrera( objeto ) {
     const carrera = new model( objeto )
     carrera.save()
 }
 
-async function getCarreras() {
-    const carreraList = await model.find()
+async function getCarreras( filtroCarrera ) {
+    let filtro = {}
+    if (filtroCarrera != null) {
+        filtro = { nombre: filtroCarrera }
+    }
+    const carreraList = await model.find( filtro )
     return carreraList
 }
 
